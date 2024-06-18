@@ -12,6 +12,7 @@ function App() {
   const [message, setMessage] = useState<TMessage | null>(null);
 
   //Const
+  //When the color changes we render new answer options
   const renderOptions = useMemo(() => {
     const options = [color, getRandomColor(color), getRandomColor(color)];
 
@@ -23,6 +24,7 @@ function App() {
   }, [color]);
 
   //Functions
+  //Function which returns a random hexadecimal color code
   function getRandomColor(colorToExclude?: string): string {
     let randomColor = (Math.random() * 0xfffff * 1000000).toString(16);
     while (randomColor === colorToExclude) {
@@ -31,6 +33,7 @@ function App() {
     return '#' + randomColor.slice(0, 6);
   }
 
+  //Function which shuffles an array of strings
   function shuffle(array: string[]): string[] {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -39,6 +42,7 @@ function App() {
     return array;
   }
 
+  //Function which checks if user chose the correct answer
   const clickHandler = (answer: string) => {
     if (answer === color) {
       setMessage({
