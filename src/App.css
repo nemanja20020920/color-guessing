@@ -1,0 +1,24 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.color-box {
+  width: 280px;
+  height: 270px;
+}
+
+.btn {
+  display: inline !important;
+  margin: 20px 10px 0 10px;
+}
